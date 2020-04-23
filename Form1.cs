@@ -11,26 +11,31 @@ using System.Windows.Forms;
 
 namespace NotatnikN
 {
-    public partial class Form1 : Form
+    public partial class Form1 : System.Windows.Forms.Form
     {
         #region Czesci
             string sciezka = "";
         #endregion Czesci
 
-        #region Konstruktor
+        #region Poczatek
         public Form1()
         {
             InitializeComponent();
         }
-        #endregion Konstruktor
+        #endregion Poczatek
 
-        
         #region Plik
-
-        private void otwórzToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NowyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Plik tekstowy (TXT)|*.txt";
+            sciezka = string.Empty;
+            poleTekstowe.Clear();
+        }
+        private void OtwórzToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                Filter = "Plik tekstowy (TXT)|*.txt"
+            };
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 sciezka = dialog.FileName;
@@ -38,19 +43,68 @@ namespace NotatnikN
             }
         }
 
-        private void zapiszToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void ZapiszToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(sciezka))
+            {
+                using(SaveFileDialog sfd = new SaveFileDialog() { Filter="Text Documents|*.txt", ValidateNames = true })
+                {
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            using (StreamWriter sw = new StreamWriter(sfd.FileName))
+                            {
+                                await sw.WriteLineAsync(poleTekstowe.Text);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(sciezka))
+                    {
+                        await sw.WriteLineAsync(poleTekstowe.Text);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
-        private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void ZapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Text Documents|*.txt", ValidateNames = true })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (StreamWriter sw = new StreamWriter(sfd.FileName))
+                        {
+                            await sw.WriteLineAsync(poleTekstowe.Text);
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
-        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ZamknijToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
         #endregion Plik
 
@@ -77,14 +131,20 @@ namespace NotatnikN
         #endregion Narzedzia
 
         #region Oprogramie
-        private void oProgramieToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void OProgramieToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            using(OProgramieForm nowa= new OProgramieForm())
+            {
+                nowa.ShowDialog();
+            }
         }
 
-        private void autorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AutorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            using (OAutorzeForm nowa2 = new OAutorzeForm())
+            {
+                nowa2.ShowDialog();
+            }
         }
         #endregion Oprogramie
 
@@ -114,5 +174,7 @@ namespace NotatnikN
 
         }
         #endregion KontekstowePlik
+
+ 
     }
 }
