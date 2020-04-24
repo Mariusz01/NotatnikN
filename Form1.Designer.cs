@@ -46,9 +46,6 @@
             this.oProgramieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramieToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.autorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.poleTekstowe = new System.Windows.Forms.RichTextBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuKontekstowe = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.wytnijToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.kopiujToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,9 +53,11 @@
             this.zaznaczWszystkoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.zamknijToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.poleTekstowe = new System.Windows.Forms.RichTextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gorneMenu.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.menuKontekstowe.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gorneMenu
@@ -72,7 +71,7 @@
             this.gorneMenu.Name = "gorneMenu";
             this.gorneMenu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.gorneMenu.Size = new System.Drawing.Size(600, 24);
-            this.gorneMenu.TabIndex = 0;
+            this.gorneMenu.TabIndex = 1;
             this.gorneMenu.Text = "menuStrip1";
             // 
             // plikToolStripMenuItem
@@ -202,35 +201,6 @@
             this.autorToolStripMenuItem.Text = "Autor";
             this.autorToolStripMenuItem.Click += new System.EventHandler(this.AutorToolStripMenuItem_Click);
             // 
-            // poleTekstowe
-            // 
-            this.poleTekstowe.ContextMenuStrip = this.menuKontekstowe;
-            this.poleTekstowe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.poleTekstowe.Location = new System.Drawing.Point(0, 24);
-            this.poleTekstowe.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
-            this.poleTekstowe.Name = "poleTekstowe";
-            this.poleTekstowe.Size = new System.Drawing.Size(600, 342);
-            this.poleTekstowe.TabIndex = 1;
-            this.poleTekstowe.Text = "";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 344);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.statusStrip1.Size = new System.Drawing.Size(600, 22);
-            this.statusStrip1.TabIndex = 3;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
             // menuKontekstowe
             // 
             this.menuKontekstowe.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -243,7 +213,6 @@
             this.zamknijToolStripMenuItem1});
             this.menuKontekstowe.Name = "menuKontekstowe";
             this.menuKontekstowe.Size = new System.Drawing.Size(167, 120);
-            this.menuKontekstowe.Opening += new System.ComponentModel.CancelEventHandler(this.menuKontekstowe_Opening);
             // 
             // wytnijToolStripMenuItem1
             // 
@@ -285,25 +254,50 @@
             this.zamknijToolStripMenuItem1.Text = "Zamknij";
             this.zamknijToolStripMenuItem1.Click += new System.EventHandler(this.ZamknijToolStripMenuItem1_Click);
             // 
+            // poleTekstowe
+            // 
+            this.poleTekstowe.ContextMenuStrip = this.menuKontekstowe;
+            this.poleTekstowe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.poleTekstowe.Location = new System.Drawing.Point(3, 31);
+            this.poleTekstowe.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.poleTekstowe.Name = "poleTekstowe";
+            this.poleTekstowe.Size = new System.Drawing.Size(594, 320);
+            this.poleTekstowe.TabIndex = 2;
+            this.poleTekstowe.Text = "";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.poleTekstowe, 0, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 1, 1, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 343F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 366);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.poleTekstowe);
             this.Controls.Add(this.gorneMenu);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.gorneMenu;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Notatnik";
             this.gorneMenu.ResumeLayout(false);
             this.gorneMenu.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.menuKontekstowe.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,9 +315,6 @@
         private System.Windows.Forms.ToolStripMenuItem zaznaczWszystkoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oProgramieToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem autorToolStripMenuItem;
-        private System.Windows.Forms.RichTextBox poleTekstowe;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem otwórzToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zapiszToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zapiszJakoToolStripMenuItem;
@@ -337,6 +328,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem zamknijToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nowyToolStripMenuItem;
+        private System.Windows.Forms.RichTextBox poleTekstowe;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 
