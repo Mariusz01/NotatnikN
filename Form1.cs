@@ -109,24 +109,24 @@ namespace NotatnikN
         #endregion Plik
 
         #region Narzedzia
-        private void kopiujToolStripMenuItem_Click(object sender, EventArgs e)
+        private void KopiujToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            poleTekstowe.Copy();
         }
 
-        private void wytnijToolStripMenuItem_Click(object sender, EventArgs e)
+        private void WytnijToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            poleTekstowe.Cut();
         }
 
-        private void wklejToolStripMenuItem_Click(object sender, EventArgs e)
+        private void WklejToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            poleTekstowe.Paste();
         }
 
-        private void zaznaczWszystkoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ZaznaczWszystkoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            poleTekstowe.SelectAll();
         }
         #endregion Narzedzia
 
@@ -149,32 +149,36 @@ namespace NotatnikN
         #endregion Oprogramie
 
         #region KontekstowePlik
-        private void wytnijToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void WytnijToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void kopiujToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void KopiujToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            poleTekstowe.Copy();
         }
 
-        private void wklejToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void WklejToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            poleTekstowe.Paste();
         }
 
         private void zaznaczWszystkoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            poleTekstowe.SelectAll();
         }
 
-        private void zamknijToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void ZamknijToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion KontekstowePlik
+
+        private void menuKontekstowe_Opening(object sender, CancelEventArgs e)
         {
 
         }
-        #endregion KontekstowePlik
-
- 
     }
 }
