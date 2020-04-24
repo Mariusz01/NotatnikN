@@ -176,14 +176,6 @@ namespace NotatnikN
 
         #endregion KontekstowePlik
 
-        private void menuKontekstowe_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+ 
     }
 }
