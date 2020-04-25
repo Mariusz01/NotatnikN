@@ -174,8 +174,101 @@ namespace NotatnikN
             this.Close();
         }
 
+
+
         #endregion KontekstowePlik
 
- 
+        #region PasekDymek
+        private void plikToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Plik";
+        }
+
+        private void nowyToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Nowy dokument";
+        }
+
+        private void otwórzToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Otwórz dokument";
+        }
+
+        private void zapiszToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Zapisz dokument";
+        }
+
+        private void zapiszJakoToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Zapisz dokument";
+        }
+
+        private void zamknijToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Zamknij program";
+        }
+
+        private void narzędziaToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Narzędzia";
+        }
+
+        private void kopiujToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Kopiuj tekst";
+        }
+
+        private void wytnijToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Wytnij tekst";
+        }
+
+        private void wklejToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Wklej tekst";
+        }
+
+        private void zaznaczWszystkoToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Zaznacz cały tekst";
+        }
+
+        private void oProgramieToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Informacje";
+        }
+
+        private void oProgramieToolStripMenuItem1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Info o Programie";
+        }
+
+        private void autorToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Info o Autorze";
+        }
+
+        private void poleTekstowe_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Pole tekstowe";
+        }
+
+        private void toolStripStatusLabel1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Pasek informacyjny";
+        }
+
+        private void statusStrip1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Pasek informacyjny";
+        }
+
+        private void gorneMenu_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Menu";
+        }
+
+        #endregion PasekDymek
     }
 }
